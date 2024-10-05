@@ -9,3 +9,8 @@
   padding: 0 15px;
   box-sizing: border-box;
 }
+
+.item-detail {
+  width: 300px;
+  height: 225px;
+}

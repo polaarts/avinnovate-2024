@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ListArtist from "./components/card/ArtistList";
+
 import ListCards from "./components/card/Cards-List";
 import Header from "./components/header/Header";
 export default function Home() {
