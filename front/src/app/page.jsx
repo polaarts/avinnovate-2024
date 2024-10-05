@@ -1,4 +1,4 @@
-import ListCards from "./components/Cards-List/Cards-List";
+import ListCards from "./components/card/Cards-List";
 import Header from "./components/header/Header";
 export default function Home() {
   const artists = [

@@ -1,4 +1,4 @@
-import CardComponent from "../card/Card";
+import CardComponent from "./Card";
 export default function ListCards({ artists }) {
   return artists.map((artist) => {
     return (
