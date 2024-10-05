@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 import ListArtist from "./components/card/ArtistList";
 
@@ -317,17 +318,25 @@ export default function Home() {
     },
   ];
 
-  const [artistsJson, setArtistJson] = useState();
-  useEffect(async () => {
-    const url = "localhost:8000/json";
+  const [artistsJson, setArtistsJson] = useState([]);
 
-    try {
-      setArtistJson = await fetch(url);
-      const json = setArtistJson.json();
-      console.log(json);
-    } catch (e) {
-      console.log(e.message);
-    }
+  useEffect(() => {
+    const fetchArtists = async () => {
+      const url = "http://localhost:8000/json"; // Agrega el protocolo adecuado
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const json = await response.json();
+        setArtistsJson(json);
+      } catch (e) {
+        console.log(e.message);
+      }
+    };
+
+    fetchArtists();
   }, []);
 
   return (
