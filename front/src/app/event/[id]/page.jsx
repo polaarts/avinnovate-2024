@@ -1,4 +1,6 @@
 import Image from "next/image";
+import ConcertTickets from "../../components/concert-tickets";
+import TheaterSeating from "../../components/theater-seating";
 
 export default function Page({ params }) {
   return (
@@ -23,10 +25,7 @@ export default function Page({ params }) {
           </h1>
         </div>
       </div>
-      <div className="flex flex-row">
-        <div className="bg-green-500 h-[800px] w-full"></div>
-        <div className="bg-red-500 h-[800px] w-full"></div>
-      </div>
+      <TheaterSeating />
     </>
   );
 }
