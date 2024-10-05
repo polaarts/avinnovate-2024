@@ -1,0 +1,336 @@
+{
+    "artistas_recomendados": [
+        {
+            "artist_id": 1,
+            "artist_name": "The Beatles",
+            "genres": [
+                "Rock",
+                "Pop Rock",
+                "Psychedelic Rock"
+            ],
+            "photo_url": "https://example.com/photos/thebeatles.jpg",
+            "concert_date": "2024-11-22",
+            "concert_time": "18:08",
+            "seats": [
+                {
+                    "type": "VIP",
+                    "price": 272,
+                    "quantity": 5
+                },
+                {
+                    "type": "Premium",
+                    "price": 219,
+                    "quantity": 10
+                },
+                {
+                    "type": "General",
+                    "price": 136,
+                    "quantity": 15
+                },
+                {
+                    "type": "Economy",
+                    "price": 83,
+                    "quantity": 20
+                }
+            ]
+        },
+        {
+            "artist_id": 23,
+            "artist_name": "Pink Floyd",
+            "genres": [
+                "Progressive Rock",
+                "Psychedelic Rock"
+            ],
+            "photo_url": "https://example.com/photos/pinkfloyd.jpg",
+            "concert_date": "2024-11-30",
+            "concert_time": "20:28",
+            "seats": [
+                {
+                    "type": "VIP",
+                    "price": 321,
+                    "quantity": 5
+                },
+                {
+                    "type": "Premium",
+                    "price": 194,
+                    "quantity": 10
+                },
+                {
+                    "type": "General",
+                    "price": 142,
+                    "quantity": 15
+                },
+                {
+                    "type": "Economy",
+                    "price": 57,
+                    "quantity": 20
+                }
+            ]
+        },
+        {
+            "artist_id": 29,
+            "artist_name": "The Rolling Stones",
+            "genres": [
+                "Rock",
+                "Blues Rock"
+            ],
+            "photo_url": "https://example.com/photos/therollingstones.jpg",
+            "concert_date": "2024-11-25",
+            "concert_time": "21:17",
+            "seats": [
+                {
+                    "type": "VIP",
+                    "price": 263,
+                    "quantity": 5
+                },
+                {
+                    "type": "Premium",
+                    "price": 198,
+                    "quantity": 10
+                },
+                {
+                    "type": "General",
+                    "price": 105,
+                    "quantity": 15
+                },
+                {
+                    "type": "Economy",
+                    "price": 74,
+                    "quantity": 20
+                }
+            ]
+        },
+        {
+            "artist_id": 33,
+            "artist_name": "Coldplay",
+            "genres": [
+                "Alternative Rock",
+                "Pop Rock"
+            ],
+            "photo_url": "https://example.com/photos/coldplay.jpg",
+            "concert_date": "2024-12-12",
+            "concert_time": "21:58",
+            "seats": [
+                {
+                    "type": "VIP",
+                    "price": 348,
+                    "quantity": 5
+                },
+                {
+                    "type": "Premium",
+                    "price": 202,
+                    "quantity": 10
+                },
+                {
+                    "type": "General",
+                    "price": 112,
+                    "quantity": 15
+                },
+                {
+                    "type": "Economy",
+                    "price": 62,
+                    "quantity": 20
+                }
+            ]
+        },
+        {
+            "artist_id": 45,
+            "artist_name": "The Beach Boys",
+            "genres": [
+                "Pop Rock",
+                "Psychedelic Pop"
+            ],
+            "photo_url": "https://example.com/photos/thebeachboys.jpg",
+            "concert_date": "2024-11-21",
+            "concert_time": "22:07",
+            "seats": [
+                {
+                    "type": "VIP",
+                    "price": 289,
+                    "quantity": 5
+                },
+                {
+                    "type": "Premium",
+                    "price": 187,
+                    "quantity": 10
+                },
+                {
+                    "type": "General",
+                    "price": 116,
+                    "quantity": 15
+                },
+                {
+                    "type": "Economy",
+                    "price": 77,
+                    "quantity": 20
+                }
+            ]
+        },
+        {
+            "artist_id": 49,
+            "artist_name": "U2",
+            "genres": [
+                "Rock",
+                "Alternative Rock",
+                "Post-Punk"
+            ],
+            "photo_url": "https://example.com/photos/u2.jpg",
+            "concert_date": "2024-12-15",
+            "concert_time": "18:51",
+            "seats": [
+                {
+                    "type": "VIP",
+                    "price": 307,
+                    "quantity": 5
+                },
+                {
+                    "type": "Premium",
+                    "price": 199,
+                    "quantity": 10
+                },
+                {
+                    "type": "General",
+                    "price": 132,
+                    "quantity": 15
+                },
+                {
+                    "type": "Economy",
+                    "price": 90,
+                    "quantity": 20
+                }
+            ]
+        },
+        {
+            "artist_id": 67,
+            "artist_name": "The Doors",
+            "genres": [
+                "Psychedelic Rock",
+                "Blues Rock"
+            ],
+            "photo_url": "https://example.com/photos/thedoors.jpg",
+            "concert_date": "2024-11-24",
+            "concert_time": "19:08",
+            "seats": [
+                {
+                    "type": "VIP",
+                    "price": 345,
+                    "quantity": 5
+                },
+                {
+                    "type": "Premium",
+                    "price": 238,
+                    "quantity": 10
+                },
+                {
+                    "type": "General",
+                    "price": 137,
+                    "quantity": 15
+                },
+                {
+                    "type": "Economy",
+                    "price": 58,
+                    "quantity": 20
+                }
+            ]
+        },
+        {
+            "artist_id": 73,
+            "artist_name": "Stevie Nicks",
+            "genres": [
+                "Rock",
+                "Pop Rock"
+            ],
+            "photo_url": "https://example.com/photos/stevienicks.jpg",
+            "concert_date": "2024-11-28",
+            "concert_time": "20:17",
+            "seats": [
+                {
+                    "type": "VIP",
+                    "price": 272,
+                    "quantity": 5
+                },
+                {
+                    "type": "Premium",
+                    "price": 242,
+                    "quantity": 10
+                },
+                {
+                    "type": "General",
+                    "price": 140,
+                    "quantity": 15
+                },
+                {
+                    "type": "Economy",
+                    "price": 52,
+                    "quantity": 20
+                }
+            ]
+        },
+        {
+            "artist_id": 82,
+            "artist_name": "Janis Joplin",
+            "genres": [
+                "Blues Rock",
+                "Psychedelic Rock"
+            ],
+            "photo_url": "https://example.com/photos/janisjoplin.jpg",
+            "concert_date": "2024-11-21",
+            "concert_time": "22:27",
+            "seats": [
+                {
+                    "type": "VIP",
+                    "price": 287,
+                    "quantity": 5
+                },
+                {
+                    "type": "Premium",
+                    "price": 211,
+                    "quantity": 10
+                },
+                {
+                    "type": "General",
+                    "price": 104,
+                    "quantity": 15
+                },
+                {
+                    "type": "Economy",
+                    "price": 71,
+                    "quantity": 20
+                }
+            ]
+        },
+        {
+            "artist_id": 88,
+            "artist_name": "Genesis",
+            "genres": [
+                "Progressive Rock",
+                "Pop Rock"
+            ],
+            "photo_url": "https://example.com/photos/genesis.jpg",
+            "concert_date": "2024-11-15",
+            "concert_time": "19:24",
+            "seats": [
+                {
+                    "type": "VIP",
+                    "price": 323,
+                    "quantity": 5
+                },
+                {
+                    "type": "Premium",
+                    "price": 219,
+                    "quantity": 10
+                },
+                {
+                    "type": "General",
+                    "price": 128,
+                    "quantity": 15
+                },
+                {
+                    "type": "Economy",
+                    "price": 72,
+                    "quantity": 20
+                }
+            ]
+        }
+    ]
+}
