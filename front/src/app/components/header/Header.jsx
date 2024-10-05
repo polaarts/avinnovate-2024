@@ -1,3 +1,3 @@
 export default function Header() {
-  return <h1>headeeeer</h1>;
+  return <div className="banner h-[800px]"></div>;
 }
