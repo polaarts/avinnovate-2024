@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Theme>
-          <div className="container">{children}</div>
+          <div>{children}</div>
         </Theme>
       </body>
     </html>
