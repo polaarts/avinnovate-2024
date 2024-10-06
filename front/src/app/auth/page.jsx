@@ -27,12 +27,12 @@ const Home = () => {
         marginTop: "50px",
       }}
     >
-      <h1>Hackatón de IA con Spotify</h1>
+      <h1>Awesome Teather</h1>
       <button
         onClick={handleLogin}
         style={{ padding: "10px 20px", fontSize: "16px" }}
       >
-        Iniciar Sesión con Spotify
+        Login with Spotify
       </button>
     </div>
   );
