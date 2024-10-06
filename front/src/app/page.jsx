@@ -55,14 +55,14 @@ export default function Home() {
     fetchArtists();
   }, [isAuthenticated, accessToken]); // Dependencias para re-ejecutar si cambia la autenticación
 
-  if (loading) return <p>Cargando artistas...</p>;
+  if (loading) return <p>Loading artists...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <>
       <Header />
       <div className="container">
-        <h1 className="font-bold text-3xl mb-4 mt-4 uppercase">Artistas</h1>
+        <h1 className="font-bold text-3xl mb-4 mt-4 uppercase">Artists</h1>
         <div></div>
         <div className="grid grid-cols-3 gap-4">
           <ListArtist artists={artistsJson.slice(0, 12)} />
