@@ -382,7 +382,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchArtists = async () => {
-      const url = "http://192.168.139.64:8000/json"; // Agrega el protocolo adecuado
+      const url = "http://192.168.1.87:8000/json"; // Agrega el protocolo adecuado
 
       try {
         const response = await fetch(url);

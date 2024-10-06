@@ -10,6 +10,7 @@ export default function ListArtist({ artists }) {
         date={artist.concert_date}
         hour={artist.concert_time}
         genres={artist.genres}
+        id={artist.artist_id}
       />
     );
   });

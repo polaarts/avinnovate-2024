@@ -69,110 +69,6 @@ const Footer = () => (
   </footer>
 );
 
-// Componente para la selección de asientos en 2D
-const SeatSelector2D = ({ onSeatSelect, selectedSeats, setCart }) => {
-  const rows = 5;
-  const seatsPerRow = 10; // Actualizado para tener 50 asientos
-
-  const handleAddToCart = () => {
-    setCart((prev) => [...prev, ...selectedSeats]);
-    setSelectedSeats([]);
-  };
-
-  return (
-    <div className="flex flex-row">
-      <div className="w-full">
-        <CardHeader>
-          <CardTitle>Selección de Asientos</CardTitle>
-          <CardDescription>
-            Haga clic en los asientos para seleccionarlos
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="relative">
-            <div className="w-full h-8 bg-red-500 mb-4 flex items-center justify-center text-white font-bold">
-              Escenario
-            </div>
-            <ScrollArea className="h-[300px]">
-              <div className="grid gap-2 p-4">
-                {Array.from({ length: rows }).map((_, rowIndex) => (
-                  <div key={rowIndex} className="flex justify-center gap-2">
-                    {Array.from({ length: seatsPerRow }).map((_, seatIndex) => {
-                      const seatNumber = rowIndex * seatsPerRow + seatIndex + 1;
-                      const isSelected = selectedSeats.includes(seatNumber);
-                      return (
-                        <Button
-                          key={seatIndex}
-                          variant={isSelected ? "destructive" : "outline"}
-                          size="sm"
-                          className="w-8 h-8 p-0"
-                          onClick={() => onSeatSelect(seatNumber)}
-                          aria-label={`${
-                            isSelected ? "Deseleccionar" : "Seleccionar"
-                          } asiento ${seatNumber}`}
-                          aria-pressed={isSelected}
-                        >
-                          {seatNumber}
-                        </Button>
-                      );
-                    })}
-                  </div>
-                ))}
-              </div>
-            </ScrollArea>
-          </div>
-        </CardContent>
-      </div>
-      <div className="w-full">
-        <CardHeader>
-          <CardTitle>Resumen de la Reserva</CardTitle>
-          <CardDescription>
-            Detalles del evento y asientos seleccionados
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div className="flex items-center">
-              <Calendar className="mr-2" />
-              <span>Fecha: 15 de Julio, 2024</span>
-            </div>
-            <div className="flex items-center">
-              <Clock className="mr-2" />
-              <span>Hora: 20:00</span>
-            </div>
-            <div className="flex items-center">
-              <MapPin className="mr-2" />
-              <span>Lugar: Teatro Espectacular</span>
-            </div>
-            <Separator />
-            <div>
-              <h3 className="font-semibold mb-2">Asientos Seleccionados:</h3>
-              {selectedSeats.length > 0 ? (
-                <ul>
-                  {selectedSeats.map((seat) => (
-                    <li key={seat}>Asiento {seat}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No hay asientos seleccionados</p>
-              )}
-            </div>
-          </div>
-        </CardContent>
-        <CardFooter>
-          <Button
-            className="w-full"
-            onClick={handleAddToCart}
-            disabled={selectedSeats.length === 0}
-          >
-            <ShoppingCart className="mr-2 h-4 w-4" /> Agregar al Carrito
-          </Button>
-        </CardFooter>
-      </div>
-    </div>
-  );
-};
-
 // Componente para un asiento individual en 3D
 const Seat = ({ position, color = "gray", isSelected }) => {
   const seatGeometry = useMemo(() => {
@@ -476,11 +372,18 @@ const TheaterView3D = ({ seatNumber }) => {
 };
 
 // Componente principal
-export function TheaterSeating() {
+export function TheaterSeating(props) {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [showingView3D, setShowingView3D] = useState(false);
   const [currentSeatIndex, setCurrentSeatIndex] = useState(0);
   const [cart, setCart] = useState([]);
+  const rows = 5;
+  const seatsPerRow = 10; // Actualizado para tener 50 asientos
+
+  const handleAddToCart = () => {
+    setCart((prev) => [...prev, ...selectedSeats]);
+    setSelectedSeats([]);
+  };
 
   const handleSeatSelect = (seatNumber) => {
     setSelectedSeats((prev) => {
@@ -536,11 +439,111 @@ export function TheaterSeating() {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="2d">
-              <SeatSelector2D
-                onSeatSelect={handleSeatSelect}
-                selectedSeats={selectedSeats}
-                setCart={setCart}
-              />
+              <div className="flex flex-row">
+                <div className="w-full">
+                  <CardHeader>
+                    <CardTitle>Selección de Asientos</CardTitle>
+                    <CardDescription>
+                      Haga clic en los asientos para seleccionarlos
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="relative">
+                      <div className="w-full h-8 bg-black mb-4 flex items-center justify-center text-white font-bold">
+                        Escenario
+                      </div>
+                      <ScrollArea className="h-[300px]">
+                        <div className="grid gap-2 p-4">
+                          {Array.from({ length: rows }).map((_, rowIndex) => (
+                            <div
+                              key={rowIndex}
+                              className="flex justify-center gap-2"
+                            >
+                              {Array.from({ length: seatsPerRow }).map(
+                                (_, seatIndex) => {
+                                  const seatNumber =
+                                    rowIndex * seatsPerRow + seatIndex + 1;
+                                  const isSelected =
+                                    selectedSeats.includes(seatNumber);
+                                  return (
+                                    <Button
+                                      key={seatIndex}
+                                      variant={
+                                        isSelected ? "destructive" : "outline"
+                                      }
+                                      size="sm"
+                                      className="w-8 h-8 p-0"
+                                      onClick={() =>
+                                        handleSeatSelect(seatNumber)
+                                      }
+                                      aria-label={`${
+                                        isSelected
+                                          ? "Deseleccionar"
+                                          : "Seleccionar"
+                                      } asiento ${seatNumber}`}
+                                      aria-pressed={isSelected}
+                                    >
+                                      {seatNumber}
+                                    </Button>
+                                  );
+                                }
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </ScrollArea>
+                    </div>
+                  </CardContent>
+                </div>
+                <div className="w-full">
+                  <CardHeader>
+                    <CardTitle>Resumen de la Reserva</CardTitle>
+                    <CardDescription>
+                      Detalles del evento y asientos seleccionados
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="flex items-center">
+                        <Calendar className="mr-2" />
+                        <span>{props.date}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Clock className="mr-2" />
+                        <span>{props.time}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <MapPin className="mr-2" />
+                        <span>Lugar: Teatro Espectacular</span>
+                      </div>
+                      <Separator />
+                      <div>
+                        <h3 className="font-semibold mb-2">
+                          Asientos Seleccionados:
+                        </h3>
+                        {selectedSeats.length > 0 ? (
+                          <ul>
+                            {selectedSeats.map((seat) => (
+                              <li key={seat}>Asiento {seat}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p>No hay asientos seleccionados</p>
+                        )}
+                      </div>
+                    </div>
+                  </CardContent>
+                  <CardFooter>
+                    <Button
+                      className="w-full"
+                      onClick={handleAddToCart}
+                      disabled={selectedSeats.length === 0}
+                    >
+                      Continuar
+                    </Button>
+                  </CardFooter>
+                </div>
+              </div>
             </TabsContent>
             <TabsContent value="3d">
               <div className="w-full h-[400px] relative">

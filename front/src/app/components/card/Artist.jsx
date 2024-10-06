@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { Card } from "@radix-ui/themes";
 import { useMemo } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Artist(props) {
+  const router = useRouter();
   const placeholder =
     "https://www.latercera.com/resizer/v2/NOCEN23BTFGH7IS5W6EGMBR4CA.jpg?quality=80&smart=true&auth=6ac6e15321d172c400071be6cbc2c655ab8727ccb20215bbbc7e4b4a4957a564&width=1200&height=834";
 
@@ -66,7 +68,11 @@ export default function Artist(props) {
             </div>
           </div>
         </div>
-        <button className="w-full bg-red-400 mt-2 rounded-md text-white py-2">
+        <button
+          type="button"
+          onClick={() => router.push(`/event/${props.id}`)}
+          className="w-full bg-red-400 mt-2 rounded-md text-white py-2"
+        >
           COMPRAR
         </button>
       </Card>
