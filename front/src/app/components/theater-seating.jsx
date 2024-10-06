@@ -28,6 +28,7 @@ import { Label } from "./ui/label";
 import { Separator } from "./ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { ScrollArea } from "./ui/scroll-area";
+import { useRouter } from "next/navigation";
 
 // Componente para el footer
 const Footer = () => (
@@ -422,6 +423,8 @@ export function TheaterSeating(props) {
     config: config.gentle,
   });
 
+  const router = useRouter();
+
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <main className="flex-grow container mx-auto p-4">
@@ -536,7 +539,7 @@ export function TheaterSeating(props) {
                   <CardFooter>
                     <Button
                       className="w-full"
-                      onClick={handleAddToCart}
+                      onClick={() => router.push("/parking")}
                       disabled={selectedSeats.length === 0}
                     >
                       Continuar

@@ -1,404 +1,62 @@
+// app/page.jsx o donde esté ubicado tu componente Home
 "use client";
 import { useEffect, useState } from "react";
 import ListArtist from "./components/card/ArtistList";
 import Header from "./components/header/Header";
-export default function Home() {
-  const artists = [
-    {
-      artist_id: 1,
-      artist_name: "The Beatles",
-      genres: ["Rock", "Pop Rock", "Psychedelic Rock"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-22",
-      concert_time: "18:08",
-      seats: [
-        {
-          type: "VIP",
-          price: 272,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 219,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 136,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 83,
-          quantity: 20,
-        },
-      ],
-    },
-    {
-      artist_id: 2,
-      artist_name: "Bob Marley",
-      genres: ["Reggae", "Ska", "Rocksteady"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-17",
-      concert_time: "19:36",
-      seats: [
-        {
-          type: "VIP",
-          price: 269,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 204,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 104,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 51,
-          quantity: 20,
-        },
-      ],
-    },
-    {
-      artist_id: 1,
-      artist_name: "The Beatles",
-      genres: ["Rock", "Pop Rock", "Psychedelic Rock"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-22",
-      concert_time: "18:08",
-      seats: [
-        {
-          type: "VIP",
-          price: 272,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 219,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 136,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 83,
-          quantity: 20,
-        },
-      ],
-    },
-    {
-      artist_id: 2,
-      artist_name: "Bob Marley",
-      genres: ["Reggae", "Ska", "Rocksteady"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-17",
-      concert_time: "19:36",
-      seats: [
-        {
-          type: "VIP",
-          price: 269,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 204,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 104,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 51,
-          quantity: 20,
-        },
-      ],
-    },
-    {
-      artist_id: 1,
-      artist_name: "The Beatles",
-      genres: ["Rock", "Pop Rock", "Psychedelic Rock"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-22",
-      concert_time: "18:08",
-      seats: [
-        {
-          type: "VIP",
-          price: 272,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 219,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 136,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 83,
-          quantity: 20,
-        },
-      ],
-    },
-    {
-      artist_id: 2,
-      artist_name: "Bob Marley",
-      genres: ["Reggae", "Ska", "Rocksteady"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-17",
-      concert_time: "19:36",
-      seats: [
-        {
-          type: "VIP",
-          price: 269,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 204,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 104,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 51,
-          quantity: 20,
-        },
-      ],
-    },
-    {
-      artist_id: 1,
-      artist_name: "The Beatles",
-      genres: ["Rock", "Pop Rock", "Psychedelic Rock"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-22",
-      concert_time: "18:08",
-      seats: [
-        {
-          type: "VIP",
-          price: 272,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 219,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 136,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 83,
-          quantity: 20,
-        },
-      ],
-    },
-    {
-      artist_id: 2,
-      artist_name: "Bob Marley",
-      genres: ["Reggae", "Ska", "Rocksteady"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-17",
-      concert_time: "19:36",
-      seats: [
-        {
-          type: "VIP",
-          price: 269,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 204,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 104,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 51,
-          quantity: 20,
-        },
-      ],
-    },
-    {
-      artist_id: 1,
-      artist_name: "The Beatles",
-      genres: ["Rock", "Pop Rock", "Psychedelic Rock"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-22",
-      concert_time: "18:08",
-      seats: [
-        {
-          type: "VIP",
-          price: 272,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 219,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 136,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 83,
-          quantity: 20,
-        },
-      ],
-    },
-    {
-      artist_id: 2,
-      artist_name: "Bob Marley",
-      genres: ["Reggae", "Ska", "Rocksteady"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-17",
-      concert_time: "19:36",
-      seats: [
-        {
-          type: "VIP",
-          price: 269,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 204,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 104,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 51,
-          quantity: 20,
-        },
-      ],
-    },
-    {
-      artist_id: 2,
-      artist_name: "Bob Marley",
-      genres: ["Reggae", "Ska", "Rocksteady"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-17",
-      concert_time: "19:36",
-      seats: [
-        {
-          type: "VIP",
-          price: 269,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 204,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 104,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 51,
-          quantity: 20,
-        },
-      ],
-    },
-    {
-      artist_id: 2,
-      artist_name: "Bob Marley",
-      genres: ["Reggae", "Ska", "Rocksteady"],
-      photo_url:
-        "https://thedemostop.com/blogs/wp-content/uploads/2024/01/british-singers-female-img.jpg",
-      concert_date: "2024-11-17",
-      concert_time: "19:36",
-      seats: [
-        {
-          type: "VIP",
-          price: 269,
-          quantity: 5,
-        },
-        {
-          type: "Premium",
-          price: 204,
-          quantity: 10,
-        },
-        {
-          type: "General",
-          price: 104,
-          quantity: 15,
-        },
-        {
-          type: "Economy",
-          price: 51,
-          quantity: 20,
-        },
-      ],
-    },
-  ];
+import useAuthStore from "./hooks/useAuth"; // Importar la tienda de autenticación
 
+export default function Home() {
   const [artistsJson, setArtistsJson] = useState([]);
+  const [loading, setLoading] = useState(true); // Estado para manejar la carga
+  const [error, setError] = useState(null); // Estado para manejar errores
+
+  // Obtener el estado de autenticación desde Zustand
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const accessToken = useAuthStore((state) => state.accessToken); // Opcional, si necesitas el token
 
   useEffect(() => {
     const fetchArtists = async () => {
-      const url = "http://192.168.1.87:8000/json"; // Agrega el protocolo adecuado
+      // Determinar la URL basada en la autenticación
+      const url = isAuthenticated
+        ? `${process.env.NEXT_PUBLIC_IP}/recomendaciones`
+        : `${process.env.NEXT_PUBLIC_IP}/json`;
+
+      // Configurar opciones de fetch
+      const options = {
+        method: "GET",
+        headers: {},
+      };
+
+      // Si el usuario está autenticado, agregar el token de autorización
+      if (isAuthenticated && accessToken) {
+        options.headers["Authorization"] = `Bearer ${accessToken}`;
+      }
 
       try {
-        const response = await fetch(url);
+        const response = await fetch(url, options);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        const { artistas } = await response.json();
+
+        const data = await response.json();
+
+        // Asumiendo que la estructura de la respuesta es la misma para ambas URLs
+        const artistas = data.artistas || data.artistas_favoritos || []; // Ajusta según la respuesta
         setArtistsJson(artistas);
-        console.log(artistas);
+        console.log("Artistas obtenidos:", artistas);
       } catch (e) {
-        console.log(e.message);
+        console.error("Error al obtener los artistas:", e);
+        setError(e.message);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchArtists();
-  }, []);
+  }, [isAuthenticated, accessToken]); // Dependencias para re-ejecutar si cambia la autenticación
+
+  if (loading) return <p>Cargando artistas...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <>

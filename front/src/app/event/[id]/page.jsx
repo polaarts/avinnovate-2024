@@ -10,7 +10,7 @@ export default function Page({ params }) {
 
   useEffect(() => {
     const fetchArtists = async () => {
-      const url = `http://192.168.139.64:8000/json/${id}`; // Agrega el protocolo adecuado
+      const url = `${process.env.NEXT_PUBLIC_IP}/json/${id}`; // Agrega el protocolo adecuado
 
       try {
         const response = await fetch(url);
